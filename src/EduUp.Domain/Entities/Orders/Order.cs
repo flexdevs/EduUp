@@ -11,8 +11,8 @@ namespace EduUp.Domain.Entities.Orders
         public virtual User User { get; set; } = default!;
         public long CourseId { get; set; }
         public virtual Course Course { get; set; } = default!;
-        public double Price { get; set; }   
-       
+        public double Price { get; set; }
+
     }
 
 }
