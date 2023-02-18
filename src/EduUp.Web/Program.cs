@@ -1,6 +1,14 @@
-var builder = WebApplication.CreateBuilder(args);
+using EduUp.Web.Configurations;
+using System;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddWeb(builder.Configuration);
+builder.Services.AddMemoryCache();
+builder.Services.AddHttpContextAccessor();
+
+/*string connectionString = builder.Configuration.GetConnectionString("Database");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));*/
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
