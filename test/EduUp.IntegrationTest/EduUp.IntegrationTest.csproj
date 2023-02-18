@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EduUp.Web\EduUp.Web.csproj" />
+    <ProjectReference Include="..\..\src\EduUp.Web\EduUp.Web.csproj" />
   </ItemGroup>
 
 </Project>

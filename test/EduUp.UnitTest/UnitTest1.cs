@@ -1,3 +1,5 @@
+using Xunit;
+
 namespace EduUp.UnitTest
 {
     public class UnitTest1
