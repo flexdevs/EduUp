@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EduUp.Service.Dtos.Accounts
 {
-    public class AdminLoginDto
+    public class AccountLoginDto
     {
         [Required, Email]
         public string Email { get; set; } = string.Empty;

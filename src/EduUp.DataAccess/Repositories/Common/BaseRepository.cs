@@ -16,7 +16,7 @@ namespace EduUp.DataAccess.Repositories.Common
             _dbcontext = context;
             _dbSet = context.Set<T>();
         }
-        public virtual void Create(T entity) => _dbSet.Add(entity);
+        public virtual void Add(T entity) => _dbSet.Add(entity);
 
         public virtual void Delete(long id)
         {
