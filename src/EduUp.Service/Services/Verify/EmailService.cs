@@ -1,14 +1,4 @@
-﻿using EduUp.Service.Dtos.Verify;
-using EduUp.Service.Interfaces.Verify;
-using Microsoft.Extensions.Configuration;
-using MimeKit;
-using MimeKit.Text;
-using MailKit.Security;
-using MailKit.Net.Smtp;
-using EduUp.Service.Exceptions;
-using EduUp.Service.Security;
-
-namespace EduUp.Service.Services.Verify
+﻿namespace EduUp.Service.Services.Verify
 {
     /*public class EmailService : IEmailService
     {

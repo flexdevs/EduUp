@@ -3,7 +3,7 @@ using EduUp.Domain.Entities.Orders;
 
 namespace EduUp.DataAccess.Interfaces.Orders
 {
-    public interface IOrderRepository : GenericRepository<Order>
+    public interface IOrderRepository : IGenericRepository<Order>
     {
     }
 }

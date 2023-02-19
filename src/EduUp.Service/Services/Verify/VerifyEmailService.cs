@@ -1,16 +1,4 @@
-﻿using EduUp.Service.Dtos.Verify;
-using EduUp.Service.Interfaces.Verify;
-using EduUp.Service.Interfaces;
-using Microsoft.Extensions.Caching.Memory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using EduUp.Service.Exceptions;
-
-namespace EduUp.Service.Services.Verify
+﻿namespace EduUp.Service.Services.Verify
 {
     /*public class VerifyEmailService : IVerifyEmailService
     {

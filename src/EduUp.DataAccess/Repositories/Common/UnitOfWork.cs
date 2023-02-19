@@ -10,47 +10,48 @@ using EduUp.DataAccess.Interfaces.Orders;
 using EduUp.DataAccess.Interfaces.Rates;
 using EduUp.DataAccess.Interfaces.Users;
 using EduUp.DataAccess.Repositories.Authors;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EduUp.DataAccess.Repositories.Categories;
+using EduUp.DataAccess.Repositories.Comments;
+using EduUp.DataAccess.Repositories.Courses;
+using EduUp.DataAccess.Repositories.CourseVideos;
+using EduUp.DataAccess.Repositories.IntroVideos;
+using EduUp.DataAccess.Repositories.Orders;
+using EduUp.DataAccess.Repositories.Rates;
+using EduUp.DataAccess.Repositories.Users;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace EduUp.DataAccess.Repositories.Common
-{ 
+{
     public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext dbContext;
-        public IAuthorRepository authorRepository { get;}
+        public IAuthorRepository Authors { get; }
+        public ICategoryRepository Categories { get; }
+        public ICommentRepository Comments { get; }
+        public ICourseRepository Courses { get; }
+        public ICourseVideoRepository CourseVideos { get; }
+        public IIntroVideoRepository IntroVideos { get; }
+        public IOrderRepository Orders { get; }
+        public IRateRepository Rates { get; }
+        public IUserRepository Users { get; }
 
-        public ICategoryRepository categoryRepository { get; }
+        public UnitOfWork(AppDbContext AppDbContext)
+        {
+            dbContext = AppDbContext;
+            Authors = new AuthorRepository(AppDbContext);
+            Categories = new CategoryRepository(AppDbContext);
+            Comments = new CommentRepository(AppDbContext);
+            Courses = new CoursesRepository(AppDbContext);
+            CourseVideos = new CourseVideoRepository(AppDbContext);
+            IntroVideos = new IntroVideoRepository(AppDbContext);
+            Orders = new OrderRepository(AppDbContext);
+            Rates = new RateRepository(AppDbContext);
+            Users = new UserRepository(AppDbContext);
+        }
 
-        public ICommentRepository commentRepository { get; }
-
-        public ICourseRepository courseRepository { get; }
-
-        public ICourseVideoRepository courseVideoRepository { get; }
-
-        public IIntroVideoRepository introVideoRepository  { get;}
-
-     public IOrderRepository orderRepository { get; }
-
-        public IRateRepository rateRepository { get; }
-
-        public IUserRepository userRepository { get; }
-
-        public UnitOfWork(AppDbContext dbContext)
-        { 
-            this.dbContext = dbContext;
-            this.authorRepository = authorRepository;
-            this.categoryRepository = categoryRepository;
-            this.commentRepository = commentRepository;
-            this.courseRepository = courseRepository;
-            this.courseVideoRepository = courseVideoRepository;
-            this.introVideoRepository = introVideoRepository;
-            this.orderRepository = orderRepository;
-            this.rateRepository = rateRepository;
-            this.userRepository = userRepository;
+        public EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class
+        {
+            return dbContext.Entry(entity);
         }
 
         public async Task<int> SaveChangesAsync()
