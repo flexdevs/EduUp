@@ -8,7 +8,6 @@ using EduUp.Domain.Entities.Orders;
 using EduUp.Domain.Entities.Rates;
 using EduUp.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
-using System.Net;
 
 namespace EduUp.DataAccess.DbContexts
 {
@@ -20,14 +19,15 @@ namespace EduUp.DataAccess.DbContexts
 
         }
 
-        public virtual DbSet<Author> Authors { get; set;}
-        public virtual DbSet<Category> Categories { get; set;}
-        public virtual DbSet<Comment> Comments { get; set;}
-        public virtual DbSet<Course> Courses { get; set;}
-        public virtual DbSet<CourseVideo> CourseVideos { get; set;}
-        public virtual DbSet<IntroVideo> IntroVideos { get; set;}
-        public virtual DbSet<Order> Orders { get; set;}
-        public virtual DbSet<Rate> Rates { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Author> Authors { get; set; } = default!;
+        public virtual DbSet<Category> Categories { get; set; } = default!;
+        public virtual DbSet<Comment> Comments { get; set; } = default!;
+        public virtual DbSet<Course> Courses { get; set; } = default!;
+        public virtual DbSet<CourseVideo> CourseVideos { get; set; } = default!;
+        public virtual DbSet<IntroVideo> IntroVideos { get; set; } = default!;
+        public virtual DbSet<Order> Orders { get; set; } = default!;
+        public virtual DbSet<Rate> Rates { get; set; } = default!;
+        public virtual DbSet<User> Users { get; set; } = default!;
+
     }
 }

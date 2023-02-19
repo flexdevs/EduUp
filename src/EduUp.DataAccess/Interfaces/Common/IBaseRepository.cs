@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace EduUp.DataAccess.Interfaces.Common
 {
-    public interface IBaseRepository<T>  where T: BaseEntity
+    public interface IBaseRepository<T> where T : BaseEntity
     {
         public void Create(T entity);
         public void Update(long id, T entity);

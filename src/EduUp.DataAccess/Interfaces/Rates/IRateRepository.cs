@@ -4,7 +4,7 @@ using EduUp.Domain.Entities.Rates;
 
 namespace EduUp.DataAccess.Interfaces.Rates
 {
-    public interface IRateRepository : GenericRepository<Rate>
+    public interface IRateRepository : IGenericRepository<Rate>
     {
     }
 }

@@ -4,7 +4,7 @@ using EduUp.Domain.Entities.Categories;
 
 namespace EduUp.DataAccess.Interfaces.Categories
 {
-    public interface ICategoryRepository : GenericRepository<Category>
+    public interface ICategoryRepository : IGenericRepository<Category>
     {
     }
 }

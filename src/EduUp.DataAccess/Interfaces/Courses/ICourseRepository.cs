@@ -4,7 +4,7 @@ using EduUp.Domain.Entities.Courses;
 
 namespace EduUp.DataAccess.Interfaces.Courses
 {
-    public interface ICourseRepository : GenericRepository<Course>
+    public interface ICourseRepository : IGenericRepository<Course>
     {
 
     }

@@ -1,9 +1,7 @@
 ﻿using EduUp.DataAccess.DbContexts;
 using EduUp.DataAccess.Interfaces.Common;
-using EduUp.DataAccess.Repositories.Common;
 using EduUp.Domain.Common;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace EduUp.DataAccess.Repositories.Common
@@ -42,6 +40,6 @@ namespace EduUp.DataAccess.Repositories.Common
             entity.Id = id;
             _dbSet.Update(entity);
         }
-}
+    }
 }
 

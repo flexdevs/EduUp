@@ -1,4 +1,6 @@
+using EduUp.DataAccess.DbContexts;
 using EduUp.Web.Configurations;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,8 +8,8 @@ builder.Services.AddWeb(builder.Configuration);
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpContextAccessor();
 
-/*string connectionString = builder.Configuration.GetConnectionString("Database");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));*/
+string connectionString = builder.Configuration.GetConnectionString("Database");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
 
 builder.Services.AddControllersWithViews();
 

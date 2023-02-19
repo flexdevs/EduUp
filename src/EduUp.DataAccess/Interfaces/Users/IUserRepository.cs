@@ -3,7 +3,7 @@ using EduUp.Domain.Entities.Users;
 
 namespace EduUp.DataAccess.Interfaces.Users
 {
-    public interface IUserRepository : GenericRepository<User>
+    public interface IUserRepository : IGenericRepository<User>
     {
     }
 }
