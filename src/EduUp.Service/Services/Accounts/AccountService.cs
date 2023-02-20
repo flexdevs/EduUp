@@ -47,10 +47,10 @@ namespace EduUp.Service.Services.Accounts
 
             User user = (User)accountRegisterDto;
 
-            /*if (accountRegisterDto.Image is not null)
-            {
-                user.ImagePath = await _fileService.SaveImageAsync(accountRegisterDto.Image);
-            }*/
+            //if (accountRegisterDto.Image is not null)
+            //{
+            //    user.ImagePath = await _fileService.SaveImageAsync(accountRegisterDto.Image);
+            //}
 
             var hashResult = PasswordHasher.Hash(accountRegisterDto.Password);
 
