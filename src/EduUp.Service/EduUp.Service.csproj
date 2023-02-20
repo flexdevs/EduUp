@@ -20,4 +20,9 @@
 	<FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dtos\Orders\" />
+    <Folder Include="Dtos\Rates\" />
+  </ItemGroup>
+
 </Project>
