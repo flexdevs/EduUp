@@ -1,6 +1,8 @@
-﻿namespace EduUp.Service.Common.Utils
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace EduUp.Service.Common.Utils
 {
-    /*public class PagedList<T> : List<T>
+    public class PagedList<T> : List<T>
     {
         public PagenationMetaData MetaData { get; set; } = default!;
 
@@ -20,5 +22,5 @@
         {
             return new PagedList<T>(list, count, @params);
         }
-    }*/
+    }
 }
