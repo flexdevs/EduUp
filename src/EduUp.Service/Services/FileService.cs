@@ -8,7 +8,8 @@ namespace EduUp.Service.Services
     public class FileService : IFileService
     {
         private readonly string images = "images";
-        private readonly string _rootpath;
+        private readonly string videos = "videos";
+		private readonly string _rootpath;
         public FileService(IWebHostEnvironment webHostEnvironment)
         {
             _rootpath = webHostEnvironment.WebRootPath;
@@ -34,5 +35,26 @@ namespace EduUp.Service.Services
                 stream.Close();
             }
         }
+
+        public async Task<string> SaveVideoAsync(IFormFile video)
+        {
+            string videoName = VideoHelper.MakeVideoName(video.FileName);
+
+            string videoPath = Path.Combine(_rootpath, videos , videoName);
+			var stream = new FileStream(videoPath, FileMode.Create);
+            try
+            {
+                await video.CopyToAsync(stream);
+                return Path.Combine(videos, videoName);
+            }
+			catch
+			{
+				return "";
+			}
+			finally
+			{
+				stream.Close();
+			}
+		}
     }
 }
