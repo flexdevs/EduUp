@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\Orders\" />
     <Folder Include="Dtos\Rates\" />
   </ItemGroup>
 
