@@ -1,5 +1,5 @@
 ﻿@using EduUp.Service.Dtos.Accounts;
-@model AccountRegisterDto
+@model AccountLoginDto
 
 <div>
 	<form asp-area="" asp-controller="accounts" asp-action="login" method="post">
@@ -10,25 +10,25 @@
 					<div class="title">Welcome</div>
 					<div class="subtitle">Let's enter to your account!</div>
 
-					<div class="input-container ic1">
-						<input id="firstname" class="input" type="text" placeholder=" " />
-						<div class="cut"></div>
-						<label for="firstname" class="placeholder">Full name</label>
-					</div>
-
 					<div class="input-container ic2">
-						<input id="lastname" class="input" type="text" placeholder=" " />
+						<input asp-for="Email" id="lastname" class="input" type="text" placeholder=" " />
 						<div class="cut cut-med"></div>
-						<label for="lastname" class="placeholder">Email</label>
+						<span class="placeholder" asp-validation-for="Email">Email</span>
 					</div>
 
 					<div class="input-container ic2">
-						<input id="email" class="input" type="text" placeholder=" " />
+						<input asp-for="Password" id="email" class="input" type="text" placeholder=" " />
 						<div class="cut "></div>
-						<label for="email" class="placeholder">Password</label>
+						<span asp-validation-for="Password" class="placeholder">Password</span>
 					</div>
 
-					<button type="text" class="submit">Login</button>
+					<button type="submit" class="submit">Login</button><br /><br />
+					<div>
+						<span class="text subtitle" style="color:#fff">
+							Hali a'zo emasmisiz?
+								<a class="text" asp-controller="accounts" asp-action="register" style="color:#E75E8D">Ro'yhatdan o'tish</a>
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
