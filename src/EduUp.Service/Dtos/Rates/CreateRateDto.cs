@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EduUp.Service.Dtos.Comments
+namespace EduUp.Service.Dtos.Rates
 {
-	public class CreateCommentDto
+	public class CreateRateDto
 	{
-		public string Comment { get; set; } = string.Empty;
+		public double rate { get; set; }
 	}
 }
