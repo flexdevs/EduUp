@@ -51,6 +51,11 @@ app.UseStatusCodePages(async context =>
 app.UseMiddleware<TokenRedirectMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapAreaControllerRoute(
+    name: "admin",
+    areaName: "Admin",
+    pattern: "admins/{controller=Home}/{action=Index}");
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
