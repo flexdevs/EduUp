@@ -1,5 +1,8 @@
 ﻿@using EduUp.Service.Dtos.Accounts;
 @model AccountRegisterDto
+@{
+	Layout = "../Accounts/_AccountLayout.cshtml";
+}
 
 <div>
 	<form asp-area="" asp-controller="accounts" asp-action="register" method="post">

@@ -1,6 +1,8 @@
 ﻿@using EduUp.Service.Dtos.Accounts;
 @model AccountLoginDto
-
+@{
+	Layout = "../Accounts/_AccountLayout.cshtml";
+}
 <div>
 	<form asp-area="" asp-controller="accounts" asp-action="login" method="post">
 		<div class="row">

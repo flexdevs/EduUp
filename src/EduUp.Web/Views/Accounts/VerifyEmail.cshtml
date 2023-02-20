@@ -1,5 +1,8 @@
 ﻿@using EduUp.Service.Dtos.Verify;
 @model VerifyEmailDto
+@{
+	Layout = "../Accounts/_AccountLayout.cshtml";
+}
 
 <div>
 	<form asp-area="" asp-controller="accounts" asp-action="verifyemail" method="post">
