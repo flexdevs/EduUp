@@ -7,27 +7,25 @@
 <div>
 	<form asp-area="" asp-controller="accounts" asp-action="verifyemail" method="post">
 		<div class="row">
-			<div class="col-lg-12">
-				<div class="form" style="background-color: #1f2122; width: 35%; margin:0 auto;">
-
+			<div class="col-lg-12" style="padding-top: 100px">
+				<div class="form" style="background-color: #27292a; padding-left: 50px; padding-right:50px ;width: 30%; margin:0 auto; height: 500px">
 					<div class="title">Welcome</div>
 					<div class="subtitle">Let's enter to your account!</div>
 
 					<div class="input-container ic2">
 						<input asp-for="Email" id="email" class="input" type="text" value="@TempData["email"]" readonly="readonly" />
-						<div class="cut cut-med"></div>
 						<span asp-validation-for="Email"></span>
 					</div>
 
 					<div class="input-container ic2">
 						<input asp-for="Code" id="email" class="input" type="number" placeholder="Your code"/>
-						<div class="cut "></div>
 						<span asp-validation-for="Code"></span>
 					</div>
 
 					<button type="submit" class="submit">Submit</button><br /><br />
+
 				</div>
 			</div>
 		</div>
 	</form>
-</div>>
+</div>
