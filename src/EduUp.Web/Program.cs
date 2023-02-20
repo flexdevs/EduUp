@@ -1,4 +1,5 @@
 using EduUp.DataAccess.DbContexts;
+using EduUp.Service.Interfaces.Accounts;
 using EduUp.Web.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddWeb(builder.Configuration);
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IAccountService, IAccountService>();
 
 string connectionString = builder.Configuration.GetConnectionString("Database");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
