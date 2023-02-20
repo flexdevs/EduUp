@@ -6,7 +6,7 @@
 	background-color: #15172b;
 	border-radius: 20px;
 	box-sizing: border-box;
-	height: 600px;
+	height: 500px;
 	padding: 20px;
 	width: 380px;
 }
@@ -55,7 +55,7 @@
 }
 
 .cut {
-	background-color: #1f2122;
+	background-color: #27292a;
 	border-radius: 10px;
 	height: 20px;
 	left: 20px;
