@@ -130,8 +130,9 @@ body {
 body .page-content {
   margin-top: 110px;
   background-color: #27292a;
-  padding: 60px;
+  padding: 20px;
   border-radius: 23px;
+  width: 90%;
 }
 
 p {

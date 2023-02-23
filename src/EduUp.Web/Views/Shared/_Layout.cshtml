@@ -1,10 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	<title>Cyborg - Awesome HTML5 Template</title>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="~/css/fontawesome.css">
 	<link rel="stylesheet" href="~/css/templatemo-cyborg-gaming.css">
@@ -16,24 +15,19 @@
 
 <body>
 	<header class="header-area header-sticky">
-		<div class="container">
+		<div class="container" style="max-width: 1650px">
 			<div class="row">
 				<div class="col-12">
 					<nav class="main-nav">
-						<!-- ***** Logo Start ***** -->
 						<a href="index.html" class="logo">
 							<img src="~/images/logo.png" alt="">
 						</a>
-						<!-- ***** Logo End ***** -->
-						<!-- ***** Search End ***** -->
 						<div class="search-input">
 							<form id="search" action="#">
 								<input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
 								<i class="fa fa-search"></i>
 							</form>
 						</div>
-						<!-- ***** Search End ***** -->
-						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li><a href="index.html">Home</a></li>
 							<li><a href="browse.html" class="active">Browse</a></li>
@@ -44,41 +38,21 @@
 						<a class='menu-trigger'>
 							<span>Menu</span>
 						</a>
-						<!-- ***** Menu End ***** -->
 					</nav>
 				</div>
 			</div>
 		</div>
 	</header>
 
-	<div class="container">
+	<div class="container" style="max-width: 1600px;">
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="page-content" style="width: 85%; margin: 0 auto; margin-top: 110px;">
-					<main role="main" class="pb-3">
-						@RenderBody()
-					</main>
+				<div class="page-content" style="padding-top: 40px">
+					@RenderBody()
 				</div>
 			</div>
 		</div>
 	</div>
-
-@*	<div class="container">
-		
-	</div>
-*@
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<p>
-						Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
-
-						<br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a> Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-				</div>
-			</div>
-		</div>
-	</footer>
 
 
 	<script src="~/vendor/jquery/jquery.min.js"></script>
@@ -89,6 +63,5 @@
 	<script src="~/js/popup.js"></script>
 	<script src="~/js/custom.js"></script>
 	@await RenderSectionAsync("Scripts", required: false)
-
 </body>
 </html>
