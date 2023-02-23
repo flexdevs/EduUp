@@ -8,6 +8,7 @@ namespace EduUp.Service.Dtos.Rates
 {
 	public class CreateRateDto
 	{
+		public long CourseId { get; set; }
 		public double rate { get; set; }
 	}
 }

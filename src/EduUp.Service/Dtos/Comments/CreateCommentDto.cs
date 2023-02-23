@@ -8,6 +8,7 @@ namespace EduUp.Service.Dtos.Comments
 {
 	public class CreateCommentDto
 	{
+		public long CourseId { get; set; }
 		public string Comment { get; set; } = string.Empty;
 	}
 }
