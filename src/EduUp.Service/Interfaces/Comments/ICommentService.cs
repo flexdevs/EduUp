@@ -10,5 +10,7 @@ namespace EduUp.Service.Interfaces.Comments
 	public interface ICommentService
 	{
 		public Task<bool> CreateCommentAsync(CreateCommentDto createCommentDto);
+		public Task<bool> UpdateCommentAsync(CreateCommentDto updatedCommentDto);
+		public Task<bool> DeleteCommentAsync(long id);
 	}
 }
