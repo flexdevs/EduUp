@@ -2,6 +2,7 @@
 using EduUp.Domain.Entities.Comments;
 using EduUp.Domain.Entities.Rates;
 using EduUp.Service.Dtos.Rates;
+using EduUp.Service.Exceptions;
 using EduUp.Service.Interfaces.Common;
 using EduUp.Service.Interfaces.Rates;
 using System;
@@ -32,6 +33,17 @@ namespace EduUp.Service.Services.Rates
 
 			return result > 0;
 
+		}
+
+		public async Task<bool> UpdateRateAsync(CreateRateDto updatedRateDto)
+		{
+			Rate rate = (Rate)updatedRateDto;
+			rate.UserId = _identityService.Id!.Value;
+
+			_unitOfWork.Rates.Update(rate.CourseId, rate);
+			var result = await _unitOfWork.SaveChangesAsync();
+
+			return result > 0;
 		}
 	}
 }
