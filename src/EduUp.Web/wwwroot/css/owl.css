@@ -42,6 +42,7 @@
     -ms-transform: translate3d(0, 0, 0); }
   .owl-carousel .owl-item {
     position: relative;
+    width:300px;
     min-height: 1px;
     float: left;
     -webkit-backface-visibility: hidden;
@@ -49,7 +50,7 @@
     -webkit-touch-callout: none; }
   .owl-carousel .owl-item img {
     display: block;
-    width: 60%;
+    height:196px;
   }
   
   .owl-carousel .owl-nav.disabled,
@@ -104,7 +105,7 @@
  *  Owl Carousel - Animate Plugin
  */
 .owl-carousel .animated {
-  animation-duration: 1000ms;
+  animation-duration: 900ms;
   animation-fill-mode: both; }
 
 .owl-carousel .owl-animated-in {
