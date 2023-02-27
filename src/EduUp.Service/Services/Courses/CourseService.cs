@@ -67,23 +67,45 @@ namespace EduUp.Service.Services.Courses
 			throw new NotImplementedException();
 		}
 
-		public async Task<PagedList<Course>> GetAllAsync(PagenationParams @params)
+		public async Task<PagedList<CourseViewModel>> GetAllAsync(PagenationParams @params)
 		{
 			var query = _unitOfWork.Courses.GetAll()
-			.OrderBy(x => x.Id);
+			.OrderByDescending(x => x.CreatedAt).Join(_unitOfWork.Authors.GetAll(),course => course.AuthorId, author=>author.Id,
+			(course, author) => new CourseViewModel()
+			{
+				Id= course.Id,
+				Description= course.Description,
+				ImagePath= course.ImagePath,
+				Name= course.Name,
+				Price = course.Price,	
+				AuthorId= author.Id,
+				AuthorName = author.FullName
+			}
+			);
 
-			return await PagedList<Course>.ToPagedListAsync(query,
+			return await PagedList<CourseViewModel>.ToPagedListAsync(query,
 				@params);
 		}
 
-		public async Task<PagedList<Course>> GetAllBySearchAsync(string search, PagenationParams @params)
+		public async Task<PagedList<CourseViewModel>> GetAllBySearchAsync(string search, PagenationParams @params)
 		{
 			var query = _unitOfWork.Courses.GetAll().Where(x => x.Name.ToLower().Contains(search.ToLower()))
-		  .OrderBy(x => x.Id);
+         .OrderByDescending(x => x.CreatedAt).Join(_unitOfWork.Authors.GetAll(), course => course.AuthorId, author => author.Id,
+            (course, author) => new CourseViewModel()
+            {
+                Id = course.Id,
+                Description = course.Description,
+                ImagePath = course.ImagePath,
+                Name = course.Name,
+                Price = course.Price,
+                AuthorId = author.Id,
+                AuthorName = author.FullName
+            }
+            );
 
-			return await PagedList<Course>.ToPagedListAsync(query,
-				@params);
-		}
+            return await PagedList<CourseViewModel>.ToPagedListAsync(query,
+                @params);
+        }
 
 		public async Task<CourseViewModel> GetAsync(long id)
 		{

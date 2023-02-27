@@ -1,0 +1,46 @@
+﻿@using EduUp.Service.Dtos.Courses;
+@model CreateCourseDto
+<div class="d-flex justify-content-center" style="margin-top:150px">
+
+    <div class="card px-4 pt-4 pb-4 pe-4" style="width:500px;">
+        <div class="card-body">
+            <h3>Create Course</h3>
+            <form asp-area="admin" asp-action="create" asp-controller="courses" method="post" enctype="multipart/form-data">
+                <div class="mt-3">
+                    <input type="number" asp-for=CategoryId class="form-control form-control-solid" placeholder="CategoryId">
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="mt-4">
+                    <input type="text" asp-for=CourseName class="form-control form-control-solid" placeholder="Name">
+                    <span asp-validation-for="CourseName" class="text-danger"></span>
+                </div>
+                <div class="mt-4">
+                    <input type="text" asp-for=Description class="form-control" placeholder="Desciption">
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="mt-4">
+                    <input type="text" asp-for=Price class="form-control" placeholder="Price">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="mt-4">
+                    <input type="file" asp-for=Image class="form-control" placeholder="Image">
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="mt-4">
+                    <input type="number" asp-for=AuthorId class="form-control" placeholder="AuthorId">
+                    <span asp-validation-for="AuthorId" class="text-danger"></span>
+                </div>
+                <div class="mt-4">
+                    <input type="number" asp-for=IntroVideoId class="form-control" placeholder="IntroVideoId">
+                    <span asp-validation-for="IntroVideoId" class="text-danger"></span>
+                </div>
+                <div class="mt-4 mb-2 d-flex justify-content-end">
+                    <input type="submit" class="btn btn-success me-2" value="Create">
+                    <a asp-area="admin" asp-controller="courses" asp-action="index" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

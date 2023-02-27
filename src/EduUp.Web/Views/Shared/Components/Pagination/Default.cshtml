@@ -1,0 +1,46 @@
+﻿@model Tuple<string,string,string,string,PagenationMetaData>
+
+<div class="mt-4">
+    <ul class="pagination pagination-outline justify-content-center">
+        @{
+            if (Model.Item5.HasPrevious)
+            {
+                <li class="page-item previous  m-1">
+                    <a asp-controller="@Model.Item1" asp-action="@Model.Item2" asp-area="@Model.Item3" asp-route-search="@Model.Item4" asp-route-page="@(Model.Item5.CurrentPage-1)" as class="page-link">
+                        <i class="previous">
+                        </i>Back
+                    </a>
+                </li>
+
+            }
+            else
+            {
+                <li class="page-item previous disabled m-1"><a href="#" class="page-link"><i class="previous"></i>Back</a></li>
+
+            }
+            for (int i = 1; i <= Model.Item5.TotalPages; i++)
+            {
+                if (i == Model.Item5.CurrentPage)
+                {
+                    <li class="page-item active m-1"><a asp-controller="@Model.Item1" asp-action="@Model.Item2" asp-route-search="@Model.Item4" asp-area="@Model.Item3" asp-route-page="@i" class="page-link">@i</a></li>
+                }
+                else
+                {
+                    <li class="page-item  m-1"><a asp-controller="@Model.Item1" asp-action="@Model.Item2" asp-area="@Model.Item3" asp-route-search="@Model.Item4" asp-route-page="@i" class="page-link">@i</a></li>
+                }
+
+            }
+            if (Model.Item5.HasNext)
+            {
+                <li class="page-item next m-1"><a asp-controller="@Model.Item1" asp-action="@Model.Item2" asp-area="@Model.Item3" asp-route-search="@Model.Item4" asp-route-page="@(Model.Item5.CurrentPage+1)" class="page-link"><i class="next"></i>Next</a></li>
+            }
+            else
+            {
+                <li class="page-item disabled next m-1"><a href="#" class="page-link"><i class="next"></i>Next</a></li>
+            }
+        }
+
+
+    </ul>
+</div>
+

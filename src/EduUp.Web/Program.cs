@@ -69,7 +69,7 @@ app.UseAuthorization();
 app.MapAreaControllerRoute(
     name: "admin",
     areaName: "Admin",
-    pattern: "admins/{controller=Home}/{action=Index}");
+    pattern: "admins/{controller=courses}/{action=Index}");
 
 app.MapControllerRoute(
     name: "default",
