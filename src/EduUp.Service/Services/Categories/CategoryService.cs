@@ -45,7 +45,7 @@ namespace EduUp.Service.Services.Categories
 		public async Task<PagedList<Category>> GetAllAsync(PagenationParams @params)
 		{
 			var query = _unitOfWork.Categories.GetAll()
-			.OrderBy(x => x.Id);
+			.OrderBy(x => x.CreatedAt);
 
 			return await PagedList<Category>.ToPagedListAsync(query,
 				@params);
@@ -54,7 +54,7 @@ namespace EduUp.Service.Services.Categories
 		public async Task<PagedList<Category>> GetAllBySearchAsync(string search, PagenationParams @params)
 		{
 			var query = _unitOfWork.Categories.GetAll().Where(x => x.CategoryName.ToLower().Contains(search.ToLower()))
-		  .OrderBy(x => x.Id);
+		  .OrderBy(x => x.CreatedAt);
 
 			return await PagedList<Category>.ToPagedListAsync(query,
 				@params);

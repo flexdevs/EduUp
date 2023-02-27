@@ -16,8 +16,8 @@ namespace EduUp.Service.Interfaces.Courses
 	{
 		public Task<bool> CreateCourseAsync(CreateCourseDto createCourseDto);
 
-		public Task<PagedList<Course>> GetAllAsync(PagenationParams @params);
-		public Task<PagedList<Course>> GetAllBySearchAsync(string search, PagenationParams @params);
+		public Task<PagedList<CourseViewModel>> GetAllAsync(PagenationParams @params);
+		public Task<PagedList<CourseViewModel>> GetAllBySearchAsync(string search, PagenationParams @params);
 		public Task<CourseViewModel> GetAsync(long id);
 
 		public Task<bool> DeleteAsync(long id);

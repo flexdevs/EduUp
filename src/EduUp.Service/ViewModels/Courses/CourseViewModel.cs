@@ -16,5 +16,7 @@ namespace EduUp.Service.ViewModels.Courses
 		public string Description { get; set; } = string.Empty;
 		public string ImagePath { get; set; } = string.Empty;
 		public double Price { get; set; }
+		public long AuthorId { get; set; }
+		public string AuthorName { get; set; } = string.Empty;
 	}
 }

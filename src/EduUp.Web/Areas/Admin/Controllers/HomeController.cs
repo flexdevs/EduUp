@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EduUp.Web.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [Route("admins")]
+    [Route("home")]
     public class HomeController : Controller
     {
         // GET: HomeController
