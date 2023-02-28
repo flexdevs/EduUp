@@ -17,6 +17,7 @@ namespace EduUp.Web.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Title = "home";
             return View();
         }
 
