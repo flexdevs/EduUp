@@ -39,7 +39,7 @@ namespace EduUp.Service.Services.Verify
 			{
 				To = sendCodeToEmailDto.Email,
 				Subject = "Verification code",
-				Body = code,
+				Body = code.ToString(),
 			};
 
 			await _emailService.SendAsync(message);

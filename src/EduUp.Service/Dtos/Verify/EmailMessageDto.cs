@@ -7,7 +7,7 @@ namespace EduUp.Service.Dtos.Verify
         [Required]
         public string To { get; set; } = string.Empty;
         [Required]
-        public int Body { get; set; }
+        public string Body { get; set; } = string.Empty;
         [Required]
         public string Subject { get; set; } = string.Empty;
     }
